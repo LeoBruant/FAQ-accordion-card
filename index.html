@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon-32x32.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faq accordion card</title>
+    <link rel="stylesheet" href="styles/style.scss">
+  </head>
+  <body>
+    <main>
+      <div class="mobile-image">
+        <img class="image" src="images/illustration-woman-online-mobile.svg" alt="">
+        <img class="shadow" src="images/bg-pattern-mobile.svg" alt="">
+      </div>
+      <div class="desktop-image">
+        <div class="image-container">
+          <img class="image" src="images/illustration-woman-online-desktop.svg" alt="">
+        </div>
+        <div class="shadow-container">
+          <img class="shadow" src="images/bg-pattern-desktop.svg" alt="">
+        </div>
+      </div>
+      <section>
+        <h1>faq</h1>
+        <ul id="faq-list"></ul>
+      </section>
+    </main>
+  </body>
+</html>
+
+<script>
+  // Variables
+
+  const list = [
+    {
+      question: 'How many team members can I invite?',
+      answer: '',
+      active: false
+    },
+    {
+      question: 'What is the maximum file upload size?',
+      answer: 'No more than 2GB. All files in your account must fit your allocated storage space.',
+      active: true
+    },
+    {
+      question: 'How do I reset my password?',
+      answer: '',
+      active: false
+    },
+    {
+      question: 'Can I cancel my subscription?',
+      answer: '',
+      active: false
+    },
+    {
+      question: 'Do you provide additional support?',
+      answer: '',
+      active: false
+    }
+  ]
+  const listElement = document.getElementById('faq-list')
+
+  // Methods
+
+  const toggleCollapse = (index) => {
+    listElement.children[index].classList.toggle('active')
+  }
+
+  // Main
+
+  list.map(({question, answer, active}, index) => {
+
+    // Create li element
+
+    let listItemElement = document.createElement('li')
+    listItemElement.onclick = () => toggleCollapse(index)
+
+    if (active) {
+      listItemElement.classList.add('active')
+    }
+
+    // Create question div
+
+    let questionElement = document.createElement('div')
+    questionElement.innerText = question
+    questionElement.classList.add('question')
+
+    // Create answer div
+    
+    let answerElement = document.createElement('div')
+    answerElement.innerText = answer
+    answerElement.classList.add('answer')
+
+    // Append elements
+
+    listItemElement.append(questionElement, answerElement)
+    listElement.append(listItemElement)
+  })
+</script>

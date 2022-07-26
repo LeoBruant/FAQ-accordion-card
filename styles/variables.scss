@@ -1,0 +1,46 @@
+// ---------------
+// Layout
+// ---------------
+
+$wd-mobile: 375px;
+$wd-desktop: 1440px;
+
+// ---------------
+// Colors
+// ---------------
+
+$white: #fff;
+
+// Text
+$primary-900: hsl(238, 29%, 16%);
+$primary-400: hsl(14, 88%, 65%);
+$neutral-800: hsl(237, 12%, 33%);
+$neutral-400: hsl(240, 6%, 50%);
+
+// Gradient
+$gradient-500: hsl(273, 75%, 66%);
+$gradient-600: hsl(240, 73%, 65%);
+
+// Dividers
+$neutral-100: hsl(240, 5%, 91%);
+
+// ---------------
+// Typography
+// ---------------
+
+$fs-title: 2rem;
+$fs-headings: 0.85rem;
+$fs-body: 0.75rem;
+
+$fw-regular: 400;
+$fw-bold: 700;
+
+// ---------------
+// Sizing
+// ---------------
+
+$sz-sm: 0.75rem;
+$sz-md: 1.5rem;
+$sz-lg: 2.25rem;
+$sz-xl: 3rem;
+$sz-xxl: 3.75rem;
